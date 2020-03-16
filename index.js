@@ -38,7 +38,7 @@ require('./lib/check-if-outdated')(function () {
       deprecationsFound: false
     };
     var fileChecks = files
-      .filter(file => ['.jsx', '.js'].indexOf(path.extname(file)) > -1)
+      .filter(file => ['.jsx', '.js', '.tsx', '.ts'].indexOf(path.extname(file)) > -1)
       .map(function (file) {
         return new Promise(function (resolve, reject) {
           fs.readFile(file, (err, fileDesc) => {
